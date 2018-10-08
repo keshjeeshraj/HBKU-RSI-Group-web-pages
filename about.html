@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Rajesh Govindan">
+    <title>RSI Group | About</title>
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" media='all'>
+</head>
+
+<body onload="onLoad();">
+    <header>
+        <div class="container">
+            <div id="branding">
+                <a href="index.html" id="main-link">
+                    <h1>Resource Systems and Intelligence</h1>
+                </a>
+            </div>
+            <nav id="navigation">
+                <ul>
+                    <li class="current"><a href="about.html" class="side-links">About</a></li>
+                    <li><a href="research.html" class="side-links">Research</a></li>
+                    <li><a href="people.html" class="side-links">People</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="v-header">
+        <div class="fullscreen-video-wrap">
+            <video autoplay muted id="my-video" onended="onVideoEnded();"></video>
+        </div>
+        <div class="header-overlay">
+            <div class="header-content">
+                <section id="boxes">
+                    <div class="container">
+                        <div class="box">
+                            <h2>Mathematical Optimisation</h2>
+                            <img src="images/logo_optimisation.png" alt="optimisation logo">
+                            <p>Our research highlights the importance of optimising the economic and environmental performance of the energy, water and food nexus; problems are tackled using stochastic, heuristic and game-theoretic approaches.</p>
+                        </div>
+                        <div class="box">
+                            <h2>Computational Intelligence</h2>
+                            <img src="images/logo_intelligence.png" alt="intelligence logo">
+                            <p>Our research implements supervised and unsupervised learning, probabilistic graphs and time series analysis on weather data and satellite imagery to model the complex interactions between environmental parameters.</p>
+                        </div>
+                        <div class="box">
+                            <h2>Systems <br>Resilience</h2>
+                            <img src="images/logo_resilience.png" alt="resilience logo">
+                            <p>Our research considers scenarios of systems being exposed to the dynamic nature of risks and uncertainties, and hence resilience thinking is adopted to model globally coordinated, adaptive and robust inter-networked systems.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer id="copyright">
+        <a href="index.html" id="img-1"><img src="images/RSI.png" alt="RSI logo" title="Resource Systems and Intelligence Group"
+                width="200px"></a>
+        <a href="https://hbku.edu.qa" id="img-2" target="_blank"><img src="images/hbku.png" alt="HBKU logo" title="Hamad Bin Khalifa University"
+                width="200px"></a>
+        <div id="footer-content">
+            <p id="cont-1">Copyright &copy; 2018 Resource Systems and Intelligence Group</p>
+            <p id="cont-2">For enquiries, contact webmasters: <a href="mailto:rgovindan@hbku.edu.qa">Dr. Rajesh Govindan</a> and <a href="mailto:talansari@hbku.edu.qa">Dr. Tareq Al-Ansari</a></p>
+        </div>
+    </footer>
+
+    <script>
+        let videoSource = ['videos/solar2.mp4', 'videos/wind2.mp4', 'videos/animals2.mp4', 'videos/water2.mp4', 'videos/food-12.mp4', 'videos/food-22.mp4', 'videos/doha2.mp4'];
+        let videoIndex = 0;
+        let videoPlayer = null;
+
+        function onLoad() {
+            // console.log('body loaded');
+            videoPlayer = document.getElementById('my-video');
+            videoPlayer.setAttribute('src', videoSource[videoIndex]);
+            videoPlayer.play();
+            videoPlayer.playbackRate = 1.5;
+        }
+
+        function onVideoEnded() {
+            // console.log('Video Ended');
+            if (videoIndex < (videoSource.length - 1)) {
+                // console.log('increment');
+                videoIndex++;
+            } else {
+                // console.log('reset');
+                videoIndex = 0;
+            }
+            videoPlayer.setAttribute('src', videoSource[videoIndex]);
+            videoPlayer.play();
+            videoPlayer.playbackRate = 1.5;
+        }
+
+    </script>
+</body>
+</html>

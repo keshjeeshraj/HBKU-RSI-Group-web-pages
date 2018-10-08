@@ -1,0 +1,154 @@
+body, html {
+    height: 100%;
+}
+
+header {
+    background-color: #4dacf9;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: #182edb 3px solid;
+    /* position: fixed; */
+    /* width: 100%; */
+} 
+
+header li {
+    float: left;
+    display: inline;
+    padding: 10px 20px;
+}
+
+header #main-link {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 18px;
+    text-shadow: 3px 3px 3px lightblue;
+    text-decoration: none;
+    color: #182edb;
+}
+
+header .side-links {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin-top: 0;
+}
+
+header #navigation {
+    float: right;
+}
+
+header .current a {
+    color: #182edb;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #182edb;
+    font-weight: bold;
+    animation-name: blinker;  
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+@keyframes blinker {
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.pimg1, .pimg2, .pimg3, .pimg4 {
+    position: relative;
+    opacity: 0.7;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    /* fixed = parallax;
+       scroll = normal */
+}
+
+.pimg1 {
+    background-image: url('../images/process.jpeg');
+    min-height: 90%;
+}
+
+.pimg2 {
+
+    background-image: url('../images/energy.jpg');
+    min-height: 90%;
+}
+
+.pimg3 {
+
+    background-image: url('../images/analytics.jpeg');
+    min-height: 90%;
+}
+
+.pimg4 {
+
+    background-image: url('../images/publications.jpg');
+    min-height: 90%;
+}
+
+.section {
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.section-light {
+    background-color: #f4f4f4;
+    color: #182edb;
+}
+
+.section .description {
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.ptext {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+
+}
+
+.ptext .border {
+    background-color: #111;
+    
+    color: white;
+    padding: 20px;
+}
+
+.ptext .trans {
+    background-color: transparent; 
+}
+
+@media (max-width: 950px) {
+    #branding, #navigation, header li {
+        /* padding: 25px; */
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .pimg1, .pimg2, .pimg3, .pimg4 {
+        background-attachment: scroll;
+    }
+}

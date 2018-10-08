@@ -1,0 +1,129 @@
+/* Header */
+#showcase {
+    background-image: url('../images/ewf-nexus-showcase.jpeg');
+    height: 83vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#showcase h1 {
+    font-size: 55px;
+    font-family: 'Cutive Mono', monospace;
+    text-shadow: 3px 3px 3px lightblue;
+    margin-bottom: 25px;
+    position: relative;
+    animation-name: heading;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    transition-timing-function: ease;
+}
+
+@keyframes heading {
+    0% {
+        top: -50px;
+    }
+    100% {
+        top: 25px;
+    }
+}
+
+#showcase p {
+    font-size: 40px;
+    font-family: 'Kalam', cursive;
+    margin-bottom: 25px;
+    position: relative;
+    top: 25px;
+    opacity: 0;
+    animation-name: typing;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-timing-function: steps(40);
+    animation-fill-mode: forwards;
+    transition-timing-function: ease;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes typing {
+  0% {
+    width: 0ch;
+    opacity: 0;
+  }
+  100% {
+    width: 40ch;
+    opacity: 1;
+  }
+}
+
+#showcase .blinking-cursor {
+  font-weight: 500px;
+  font-size: 50px;
+  color: #182edb;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: step-end;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #182edb;
+  }
+}
+
+#showcase .button {
+    text-decoration: none;
+    font-size: 20px;
+    color: blue;
+    background-color: white;
+    padding: 10px 20px;
+    border: #182edb 2px solid;
+    border-radius: 10px;
+    position: relative;
+    top: 25px;
+    opacity: 0;
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    transition-property: transform;
+    transition-duration: 3s;
+    transition-timing-function: ease;
+}
+
+#showcase .button:hover {
+    background: #182edb;
+    color: white;
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    transition-property: transform;
+    transition-duration: 3s;
+    transition-timing-function: linear;
+}
+
+@keyframes btn {
+    0% {
+        opactity: 0;
+    }
+    100% {
+        opacity: 0.75;
+        transform: rotateY(360deg);
+    }
+}
+
+@media (max-width: 950px) {
+  #showcase {
+    /* Image */
+    min-height: 90vh;
+  }
+}
